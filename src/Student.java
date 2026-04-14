@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class Student {
@@ -43,14 +45,77 @@ public class Student {
 
         System.out.println(letter + number);
 
+        scan.nextLine();
+
         System.out.print("Introduceti numele studentului: ");
-        int age = scan.nextInt();
+         String name = scan.nextLine();
 
-        System.out.println("Introduceti anul nasterii studentului: ");
-        int yearOfBirth = scan.nextInt();
+         while(true) {
 
+             System.out.print("Introduceti anul nasterii studentului: ");
+             int yearOfBirth = scan.nextInt();
+
+             int curentYear = LocalDate.now().getYear();
+
+             int age = curentYear - yearOfBirth;
+
+             if (age <= 0 || age > 120)
+                 System.out.println("Reintroduceti anul nasterii: ");
+             else {
+                 System.out.println("Student: " + name + " " + "Varsta: " + age + " ani.");
+                 break;
+             }
+
+
+         }
+
+         System.out.print("Introduceti specialitatea(Algebra/ Geometrie/ Calcul_Integral: ");
+         scan.nextLine();
+         String specialitate = scan.nextLine();
+
+         if(specialitate.equalsIgnoreCase("algebra") || specialitate.equalsIgnoreCase("geometrie") || specialitate.equalsIgnoreCase("calcul_integral"))
+            System.out.println("A fost aleasa specialitatea " + specialitate);
+
+         while(true) {
+             System.out.print("Introduceti nota test1: ");
+             int test1 = scan.nextInt();
+
+             if (test1 < 1 || test1 > 10)
+                 System.out.println("Nota invalida! Reintroduceti: ");
+             else
+                 break;
+
+         }
+
+
+        while(true) {
+            System.out.print("Introduceti nota test2: ");
+            int test2 = scan.nextInt();
+
+            if (test2 < 1 || test2 > 10)
+                System.out.println("Nota invalida! Reintroduceti: ");
+            else
+                break;
+
+        }
+
+        while(true) {
+            System.out.print("Introduceti nota examen: ");
+            int examen = scan.nextInt();
+
+            if (examen < 1 || examen > 10)
+                System.out.println("Nota invalida! Reintroduceti: ");
+            else
+                break;
+
+        }
 
         System.out.println("Iesire din program...");
+
+
+
+
+
 
 
     }
