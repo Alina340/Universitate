@@ -8,5 +8,22 @@ public class Student {
 
         Scanner scan = new Scanner(System.in);
 
+
+        while (true) {
+            System.out.print("Introducere facultate(Matematica/Informatica): ");
+            String facultate = scan.nextLine();
+
+            //nextLine - citeste toata propozitia
+            //next - doar primul cuvant
+
+            if (facultate.equalsIgnoreCase("matematica") || facultate.equalsIgnoreCase("informatica")) {
+                System.out.println("A fost aleasa Facultatea " + facultate);
+                break;
+            } else {
+                System.out.println("Optiune invalida!");
+
+            }
+        }
+
     }
 }
