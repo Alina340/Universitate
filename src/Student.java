@@ -36,6 +36,22 @@ public class Student {
             return;
         }
 
+        System.out.print("Numele grupei: ");
+
+        String letter = scan.nextLine();
+        int number = scan.nextInt();
+
+        System.out.println(letter + number);
+
+        System.out.print("Introduceti numele studentului: ");
+        int age = scan.nextInt();
+
+        System.out.println("Introduceti anul nasterii studentului: ");
+        int yearOfBirth = scan.nextInt();
+
+
+        System.out.println("Iesire din program...");
+
 
     }
 }
