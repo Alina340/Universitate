@@ -25,5 +25,17 @@ public class Student {
             }
         }
 
+        System.out.print("Doriti sa introduceti studenti noi? ");
+
+        String decizie = scan.nextLine();
+
+        if(decizie.equalsIgnoreCase("da")) {
+            System.out.println("Creati numele grupei noi");
+        }else {
+            System.out.println("Iesire din program...");
+            return;
+        }
+
+
     }
 }
