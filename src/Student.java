@@ -73,12 +73,19 @@ public class Student {
          scan.nextLine();
          String specialitate = scan.nextLine();
 
-         if(specialitate.equalsIgnoreCase("algebra") || specialitate.equalsIgnoreCase("geometrie") || specialitate.equalsIgnoreCase("calcul_integral"))
+         if(specialitate.equalsIgnoreCase("algebra") || specialitate.equalsIgnoreCase("geometrie") || specialitate.equalsIgnoreCase("calcul_integral")) {
             System.out.println("A fost aleasa specialitatea " + specialitate);
+            return;
+          } else {
+             System.out.println("Optiune invalida!");
 
+         }
+
+
+         int test1;
          while(true) {
              System.out.print("Introduceti nota test1: ");
-             int test1 = scan.nextInt();
+                test1 = scan.nextInt();
 
              if (test1 < 1 || test1 > 10)
                  System.out.println("Nota invalida! Reintroduceti: ");
@@ -87,10 +94,10 @@ public class Student {
 
          }
 
-
+         int test2;
         while(true) {
             System.out.print("Introduceti nota test2: ");
-            int test2 = scan.nextInt();
+             test2 = scan.nextInt();
 
             if (test2 < 1 || test2 > 10)
                 System.out.println("Nota invalida! Reintroduceti: ");
@@ -99,9 +106,11 @@ public class Student {
 
         }
 
+
+        int examen;
         while(true) {
             System.out.print("Introduceti nota examen: ");
-            int examen = scan.nextInt();
+             examen = scan.nextInt();
 
             if (examen < 1 || examen > 10)
                 System.out.println("Nota invalida! Reintroduceti: ");
@@ -109,6 +118,13 @@ public class Student {
                 break;
 
         }
+
+        int notaFinala = (test1 + test2 + examen)/3;
+
+        if(notaFinala > 9)
+            System.out.println("Esti promovat!");
+        else
+            System.out.println("Nu ati trecut cu brio, incercati in semestrul urmator");
 
         System.out.println("Iesire din program...");
 
